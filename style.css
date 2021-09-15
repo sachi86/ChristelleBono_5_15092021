@@ -58,4 +58,45 @@ ul {
     background-color:#ecd6ea;
     font-weight: bolder;
 }
+footer {
+    width: 100%;
+    height: 238px;
+    background-color: #F2E8F1;
+    padding:20px;
+}
 
+.social_network {
+    font-size:1.5rem;
+    text-align: center;
+}
+
+.social_icon {
+    width: 70px;
+    height: 70px;
+    padding-top: 23px;
+    border-radius: 50px;
+}
+
+.social_icon:hover {
+    background-color:#ecd6ea;
+    
+}
+.services {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.service_item {
+    padding: 20px 30px;
+    color: black;
+}
+
+.service_item:hover {
+    background-color:#ecd6ea;
+}
+
+.service_list {
+    justify-content: center;
+    padding-top: 20px;
+}
