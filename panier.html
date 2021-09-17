@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3ac55bcfa1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orinoco - Les Oursons</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="logo_Orinoco.png" alt="Logo de la boutique Orinoco"></a>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li>
+                    <a href="home.html" class="navigation_list">Nos produits</a>
+                </li>
+                <li><a href="panier.html" class="navigation_list">
+                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        <span>Panier</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="banner_basket">
+            <div class="shop_description">
+                <h1 class="title">Votre panier</h1>
+            </div>
+        </section>  
+        <section class="basket_board">
+            <h2>On récapitule nos achats</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom du produit</th>
+                        <th>Référence</th>
+                        <th>Quantité</th>
+                        <th>prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{}</td>
+                        <td>{}</td>
+                        <td>{}</td>
+                        <td>{}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>{value}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <section class="basket_form">
+            <h2>On remplis le formulaire pour la livraison</h2>
+            <form method="POST" action="validation.html">
+                <div>
+                    <label for="firstName" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Jean" required>
+                </div>
+                <div>
+                    <label for="lastName" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Dupond" required>
+                </div>
+                <div>
+                    <label for="email" class="form-label">Adresse électronique</label>
+                    <input type="text" class="form-control" id="email" placeholder="jean.dupond@orinoco.fr" required>
+                </div>
+                <div>
+                    <label for="address" class="form-label">Adresse postale</label>
+                    <input type="text" class="form-control" id="address" placeholder="20 rue Les Oursons d'Orinoco" required>
+                </div>
+                <div>
+                    <label for="city" class="form-label">Ville</label>
+                    <input type="text" class="form-control" id="city" placeholder="PARIS" required>
+                </div>
+                <div>
+                    <label for="zip" class="form-label">code postal</label>
+                    <input type="text" class="form-control" id="zip" placeholder="75001" required>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="social_network">
+            <h3>Suivez nous</h3>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook social_icon" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/home?lang=fr" target="_blank"><i class="fa fa-twitter social_icon" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/?hl=fr" target="_blank"><i class="fa fa-instagram social_icon" aria-hidden="true"></i></a>
+        </div>
+        <div class="services">
+            <h3>Aides et engagements</h3>
+            <ul class="service_list">
+                <li><a href="#" class="service_item">Conditions générale de vente</a></li>
+                <li><a href="#"class="service_item">F.A.Q</a></li>
+                <li><a href="#"class="service_item">Le groupe Orinoco</a></li>
+                <li><a href="#"class="service_item">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

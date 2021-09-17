@@ -19,6 +19,7 @@ body {
     align-items: center;
     font-family: 'Neucha', cursive, sans-serif;
     width: 100%;
+    font-size: 1.6rem;
 }
 
 a {
@@ -60,13 +61,12 @@ ul {
 }
 footer {
     width: 100%;
-    height: 238px;
+    height: 245px;
     background-color: #F2E8F1;
     padding:20px;
 }
 
 .social_network {
-    font-size:1.5rem;
     text-align: center;
 }
 
@@ -79,10 +79,10 @@ footer {
 
 .social_icon:hover {
     background-color:#ecd6ea;
+    font-weight: bolder;
     
 }
 .services {
-    font-size: 1.5rem;
     text-align: center;
     margin-top: 10px;
 }
@@ -94,9 +94,78 @@ footer {
 
 .service_item:hover {
     background-color:#ecd6ea;
+    font-weight: bolder;
 }
 
 .service_list {
     justify-content: center;
     padding-top: 20px;
 }
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.banner {
+    background-image: url(images/teddy_5.jpg);
+	width: 100%;
+	height: 250px;
+	background-size: cover;
+	background-position: center bottom -250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.banner_basket {
+	width: 100%;
+	height: 100px;
+    background-color: #ecd6ea;
+}
+.shop_description {
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 10px;
+}
+.title {
+    font-size: 4rem;
+}
+
+.making {
+    align-self: flex-start;
+    margin:70px 0 0 30px;
+}
+
+.produits_section {
+    width: 100%;
+}
+
+.listProduit {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cardProduit {
+    width: 300px;
+    height: 300px;
+}
+
+.imgUrl {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+.basket_board, .basket_form {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+h2 {
+    margin-bottom: 20px;
+}
+
