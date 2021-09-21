@@ -1,5 +1,5 @@
-class produitManager{
-    constructor(listProduit){
-        this.listProduit = jsonProduit.listProduit;
+class productManager{
+    constructor(listProduct){
+        this.listProduct = jsonProduct.listProduct;
     }
 }
