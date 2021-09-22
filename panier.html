@@ -37,10 +37,11 @@
             </div>
         </section>  
         <section class="basket_board">
-            <h2>On récapitule nos achats</h2>
+            <h2>On vérifie nos achats...</h2>
             <table>
                 <thead>
                     <tr>
+                        <th>Photo</th>
                         <th>Nom du produit</th>
                         <th>Référence</th>
                         <th>Quantité</th>
@@ -53,44 +54,46 @@
                         <td>{}</td>
                         <td>{}</td>
                         <td>{}</td>
+                        <td>{}</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="4" class="tableFoot"><i class="fas fa-calculator"></i>Total</td>
                         <td>{value}</td>
                     </tr>
                 </tfoot>
             </table>
         </section>
         <section class="basket_form">
-            <h2>On remplis le formulaire pour la livraison</h2>
-            <form method="POST" action="validation.html">
-                <div>
-                    <label for="firstName" class="form-label">Prénom</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Jean" required>
+            <h2>On remplis le formulaire pour la livraison...</h2>
+            <form method="POST" action="validation.html" class="formDelivery">
+                <div class="formComposants">
+                    <label for="firstName" class="formLabel">Prénom</label>
+                    <input type="text" class="formInput" id="firstName" placeholder="Jean" required>
+                </div>
+                <div class="formComposants">
+                    <label for="lastName" class="formLabel">Nom</label>
+                    <input type="text" class="formInput" id="lastName" placeholder="Dupond" required>
+                </div>
+                <div class="formComposants">
+                    <label for="email" class="formLabel">Adresse électronique</label>
+                    <input type="text" class="formInput" id="email" placeholder="jean.dupond@orinoco.fr" required>
+                </div>
+                <div class="formComposants">
+                    <label for="address" class="formLabel">Adresse postale</label>
+                    <input type="text" class="formInput" id="address" placeholder="20 rue Les Oursons d'Orinoco" required>
+                </div>
+                <div class="formComposants">
+                    <label for="city" class="formLabel">Ville</label>
+                    <input type="text" class="formInput" id="city" placeholder="PARIS" required>
+                </div>
+                <div class="formComposants">
+                    <label for="zip" class="formLabel">code postal</label>
+                    <input type="text" class="formInput" id="zip" placeholder="75001" required>
                 </div>
                 <div>
-                    <label for="lastName" class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Dupond" required>
-                </div>
-                <div>
-                    <label for="email" class="form-label">Adresse électronique</label>
-                    <input type="text" class="form-control" id="email" placeholder="jean.dupond@orinoco.fr" required>
-                </div>
-                <div>
-                    <label for="address" class="form-label">Adresse postale</label>
-                    <input type="text" class="form-control" id="address" placeholder="20 rue Les Oursons d'Orinoco" required>
-                </div>
-                <div>
-                    <label for="city" class="form-label">Ville</label>
-                    <input type="text" class="form-control" id="city" placeholder="PARIS" required>
-                </div>
-                <div>
-                    <label for="zip" class="form-label">code postal</label>
-                    <input type="text" class="form-control" id="zip" placeholder="75001" required>
+                    <input type="submit" value="Passer la commande" class="btnBasket">
                 </div>
             </form>
         </section>
