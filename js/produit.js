@@ -12,9 +12,9 @@ console.log(Id);
 //affichage du produit qui à été selectionné par l'id avec la méthode fetch
 
 let productSelected =  fetch(`http://localhost:3000/api/teddies/${Id}`)
-    .then(data => data.json);
-    let product = new Product(); 
-    document.querySelector(".productCart").innerHTML += `<article class="productCardId">
+    .then(data => data.json())
+        let product = new Product(jsonProduct); 
+        document.querySelector(".productCart").innerHTML += `<article class="productCardId">
                                     <div class="imageProductId">
                                         <img class="imgUrlId" src="${product.imageUrl}" alt="photo du produit">
                                     </div>
@@ -29,4 +29,7 @@ let productSelected =  fetch(`http://localhost:3000/api/teddies/${Id}`)
                                         <p class="descriptionId">${product.description}</p>
                                         <p class="priceId">${product.getConvertedPrice}</p>
                                     </div>
-                                </article>`;
+                                </article>`
+        .catch(function(err) {
+            alert("Désolé nous n'avons pas pu afficher le petit ourson Orinoco que vous voulez-voir! Si vous rencontrez un problème contactez nous! Erreur : " +err);
+});
