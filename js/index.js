@@ -2,7 +2,7 @@
 const api = "http://localhost:3000/api/teddies";
 
 //Récupération de la liste des produits
-fetch(api).then(data => data.json()) //Récupération des données 
+fetch(api).then(data => data.json()) //Récupération des données en format json
     .then(jsonListProduct => {
         for( let jsonProduct of jsonListProduct){
             let product = new Product(jsonProduct);

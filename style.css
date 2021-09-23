@@ -274,6 +274,12 @@ th, td {
     border: solid 2px #ecd6ea;
     box-shadow: 2px 2px 6px #8B6DEE;
 }
+.buttonBasket {
+    display: flex;
+    flex-direction: column;
+    padding-top:20px;
+    align-items: center;
+}
 
 .btnBasket {
     margin:20px;
@@ -281,6 +287,14 @@ th, td {
     border: 1px solid #d39660c7;
     border-radius: 20px;
     background-color: #F2E8F1;
+    font-size: 1.5rem;
+    font-family: 'Neucha', cursive, sans-serif;
+}
+
+.btnBasket:hover, .btnBasket:active {
+    background-color: #ecd6ea;
+    box-shadow: 5px 5px 30px #8B6DEE;
+    border: 1px solid #ecd6ea;
 }
 /*****************Page Produit*******************/
 .bannerProduct {
@@ -289,6 +303,13 @@ th, td {
     background-color: #ecd6ea;
     text-align: center;
     padding-top: 25px;
+}
+.productSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 20px 0;
 }
 
 .productCardId {
@@ -316,6 +337,10 @@ th, td {
     border-radius:35px 0 0 35px;
 }
 
+span {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
 .descriptionProductId {
     display: flex;
     flex-direction: column;
@@ -335,13 +360,39 @@ th, td {
 #colors {
     border-radius: 20px;
     border: 1px solid #d39660c7;
+    outline: transparent;
+    padding: 10px;
 }
 
-.btnProduct {
+#btnProduct {
     padding:10px 20px;
     border: 1px solid #d39660c7;
     border-radius: 20px;
     background-color: #F2E8F1;
     font-size: 1.5rem;
     font-family: 'Neucha', cursive, sans-serif; 
+}
+
+#btnProduct:hover, #btnProduct:active {
+    background-color: #ecd6ea;
+    box-shadow: 5px 5px 30px #8B6DEE;
+    border: 1px solid #ecd6ea;
+}
+/**********Page Confirmation*************/
+.bannerConfirm {
+    background-image: url(images/teddy_5.jpg);
+	width: 100%;
+	height: 150px;
+	background-size: cover;
+	background-position: center;
+    text-align: center;
+    padding-top:35px;
+}
+
+.ResumeCommande {
+    margin:30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -14,27 +14,35 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
     .then(response => response.json())
     .then(dataProduct => {
         let product = new Product(dataProduct); 
-        document.querySelector(".productCart").innerHTML += `<article class="productCardId">
-                                    <div class="imageProductId">
-                                        <img class="imgUrlId" src="${product.imageUrl}" alt="photo du produit">
-                                    </div>
-                                    <div class="descriptionProductId">
-                                        <h3 class="nameId">${product.name}</h3>
-                                        <form class="productFormId">
-                                            <label for="colors" class="colorsId">Couleur :</label>
-                                            <select name="colors" id="colors">
-                                                <option value="colors">${product.colors[0]}</option>
-                                                <option value="colors">${product.colors[1]}</option>
-                                                <option value="colors">${product.colors[2]}</option>
-                                                <option value="colors">${product.colors[3]}</option>
-                                            </select>
-                                        </form>
-                                        <p class="descriptionId">${product.description}</p>
-                                        <p class="priceId">${product.getConvertedPrice()}</p>
-                                        <button type="submit" class="btnProduct">Ajouter au panier</button>
-                                    </div>
-                                </article>`
-    })
+        document.querySelector(".productSection").innerHTML += ` <article class="productCardId">
+                                                                    <form class="productFormId">
+                                                                        <div class="imageProductId">
+                                                                            <img class="imgUrlId" src="${product.imageUrl}" alt="photo du produit">
+                                                                        </div>
+                                                                        <div class="descriptionProductId">
+                                                                            <h3 class="nameId"><span>Nom du Produit : </span>${product.name}</h3>
+                                                                            <div class="colorsForm">
+                                                                                <label for="colors" class="colorsId">Choix de couleur :</label>
+                                                                                <select name="colors" id="colors">
+                                                                                <option selected>Choississez votre couleur</option>
+                                                                                ${product.colors.map(color => `<option>${color}</option>`)}
+                                                                                </select>
+                                                                            </div>
+                                                                            <p class="descriptionId">Description du produit :<br/> ${product.description}</p>
+                                                                            <p class="priceId">Prix : ${product.getConvertedPrice()}</p>
+                                                                            <button type="submit" id="btnProduct">Ajouter au panier</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </article>`
+                                    })
         .catch(function(err) {
             alert("Désolé nous n'avons pas pu afficher le petit ourson Orinoco que vous voulez-voir! Si vous rencontrez un problème contactez nous! Erreur : " +err);
 });
+
+//Récupération de l'élément à écouter
+const btnAddBasket = document.querySelector("#btnProduct");
+
+//Ecouter l'évenement click du bouton "Ajouter au panier"
+btnAddBasket.addEventListener("click",function(event){
+    event.preventDefault();
+})
