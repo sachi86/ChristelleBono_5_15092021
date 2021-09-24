@@ -30,6 +30,11 @@ a {
 a:visited, a:active {
     color:inherit;
 }
+
+input, select {
+    font-size: 1.5rem;
+    font-family: 'Neucha', cursive, sans-serif;
+}
 /*********************HEADER**************************/
 header {
     display: flex;
@@ -62,6 +67,14 @@ ul {
     font-weight: bolder;
 }
 
+.quantityBasket {
+    color:white;
+    display: none;
+    font-size: 1.5rem;
+    background-color: #ecd6ea;
+    padding:5px;
+    border-radius: 50px;
+}
 /**************FOOTER********************/
 footer {
     width: 100%;
@@ -350,6 +363,14 @@ span {
 
 .productFormId{
     display: flex;
+    flex-direction: column;
+}
+
+.productOption {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:10px;
 }
 
 .colorsId {
@@ -362,6 +383,19 @@ span {
     border: 1px solid #d39660c7;
     outline: transparent;
     padding: 10px;
+}
+
+#quantity {
+    border-radius: 20px;
+    border: 1px solid #d39660c7;
+    outline: transparent;
+    padding: 10px;
+}
+
+#colors:focus, #colors:checked {
+    background-color: #ecd6ea;
+    box-shadow: 5px 5px 30px #8B6DEE;
+    border: 1px solid #ecd6ea;
 }
 
 #btnProduct {

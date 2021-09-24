@@ -15,34 +15,44 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
     .then(dataProduct => {
         let product = new Product(dataProduct); 
         document.querySelector(".productSection").innerHTML += ` <article class="productCardId">
-                                                                    <form class="productFormId">
                                                                         <div class="imageProductId">
                                                                             <img class="imgUrlId" src="${product.imageUrl}" alt="photo du produit">
                                                                         </div>
                                                                         <div class="descriptionProductId">
                                                                             <h3 class="nameId"><span>Nom du Produit : </span>${product.name}</h3>
-                                                                            <div class="colorsForm">
-                                                                                <label for="colors" class="colorsId">Choix de couleur :</label>
-                                                                                <select name="colors" id="colors">
-                                                                                <option selected>Choississez votre couleur</option>
-                                                                                ${product.colors.map(color => `<option>${color}</option>`)}
-                                                                                </select>
-                                                                            </div>
+                                                                            <form class="productFormId">
+                                                                                <div class="productOption">
+                                                                                    <label for="colors" class="colorsId">Choix de couleur :</label>
+                                                                                    <select name="colors" id="colors" required>
+                                                                                    <option selected>Choississez votre couleur</option>
+                                                                                    ${product.colors.map(color => `<option>${color}</option>`)}
+                                                                                    </select>
+                                                                                </div>
+                                                                            </form>
                                                                             <p class="descriptionId">Description du produit :<br/> ${product.description}</p>
                                                                             <p class="priceId">Prix : ${product.getConvertedPrice()}</p>
                                                                             <button type="submit" id="btnProduct">Ajouter au panier</button>
                                                                         </div>
-                                                                    </form>
                                                                 </article>`
                                     })
         .catch(function(err) {
             alert("Désolé nous n'avons pas pu afficher le petit ourson Orinoco que vous voulez-voir! Si vous rencontrez un problème contactez nous! Erreur : " +err);
 });
 
-//Récupération de l'élément à écouter
-const btnAddBasket = document.querySelector("#btnProduct");
-
-//Ecouter l'évenement click du bouton "Ajouter au panier"
-btnAddBasket.addEventListener("click",function(event){
-    event.preventDefault();
-})
+function btnAddBasketEvent(){
+    document.querySelector("#btnProduct").addEventListener( "click", function(event){
+        event.preventDefault();
+        let saveProductInLocalStorage = JSON.parse(localStorage.getItem("productBasket"));
+        Id;
+        if(saveProductInLocalStorage){
+            saveProductInLocalStorage.push(Id);
+            localStorage.setItem("productBasket",JSON.stringify(saveProductInLocalStorage));
+        }else{
+            saveProductInLocalStorage=[];
+            saveProductInLocalStorage.push(Id);
+            localStorage.setItem("productBasket",JSON.stringify(saveProductInLocalStorage));
+        }
+    
+    })
+}
+console.log(saveProductInLocalStorage);
