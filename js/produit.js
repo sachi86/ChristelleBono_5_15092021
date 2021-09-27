@@ -39,8 +39,10 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
             alert("Désolé nous n'avons pas pu afficher le petit ourson Orinoco que vous voulez-voir! Si vous rencontrez un problème contactez nous! Erreur : " +err); 
 });
 
-document.querySelector(".addProductProduct").forEach( productBasket =>{
-    productBasket.addEventListener("click",function(){
+const btnProduct = document.querySelector("#btn.product");
+
+function addBasket(){
+    btnProduct.addEventListener("click", function(){
         addProductBasket(this.dataset.id);
     })
-});  
+};

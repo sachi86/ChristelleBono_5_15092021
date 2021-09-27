@@ -1,7 +1,7 @@
 // Fonction pour ajouter au panier
 function addProductBasket(productId){
     let listProductBasket = getProductBasket();
-    listProductBasket.push({id:productId});
+    listProductBasket.push(productId);
     saveProductBasket(listProductBasket);
 }
 
