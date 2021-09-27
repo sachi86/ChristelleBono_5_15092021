@@ -19,3 +19,4 @@ function getProductBasket(){
 function saveProductBasket(listProductBasket){
     localStorage.setItem("ProductBasket", JSON.stringify(listProductBasket));
 }
+

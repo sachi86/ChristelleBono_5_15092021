@@ -33,16 +33,13 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
                                                                             <p class="priceId">Prix : ${product.getConvertedPrice()}</p>
                                                                             <button type="submit" id="btnProduct" data-id="${product._id}">Ajouter au panier</button>
                                                                         </div>
-                                                                </article>`
-                                    })
+                                                                </article>`;
+        const btnProduct = document.querySelector("#btnProduct");
+        btnProduct.addEventListener("click", function(event){
+            event.preventDefault();
+            addProductBasket(this.dataset.id);
+        });
+    })
     .catch(function(err) {
             alert("Désolé nous n'avons pas pu afficher le petit ourson Orinoco que vous voulez-voir! Si vous rencontrez un problème contactez nous! Erreur : " +err); 
 });
-
-const btnProduct = document.querySelector("#btn.product");
-
-function addBasket(){
-    btnProduct.addEventListener("click", function(){
-        addProductBasket(this.dataset.id);
-    })
-};
