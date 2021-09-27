@@ -31,28 +31,16 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
                                                                             </form>
                                                                             <p class="descriptionId">Description du produit :<br/> ${product.description}</p>
                                                                             <p class="priceId">Prix : ${product.getConvertedPrice()}</p>
-                                                                            <button type="submit" id="btnProduct">Ajouter au panier</button>
+                                                                            <button type="submit" id="btnProduct" data-id="${product._id}">Ajouter au panier</button>
                                                                         </div>
                                                                 </article>`
                                     })
-        .catch(function(err) {
-            alert("Désolé nous n'avons pas pu afficher le petit ourson Orinoco que vous voulez-voir! Si vous rencontrez un problème contactez nous! Erreur : " +err);
+    .catch(function(err) {
+            alert("Désolé nous n'avons pas pu afficher le petit ourson Orinoco que vous voulez-voir! Si vous rencontrez un problème contactez nous! Erreur : " +err); 
 });
 
-function btnAddBasketEvent(){
-    document.querySelector("#btnProduct").addEventListener( "click", function(event){
-        event.preventDefault();
-        let saveProductInLocalStorage = JSON.parse(localStorage.getItem("productBasket"));
-        Id;
-        if(saveProductInLocalStorage){
-            saveProductInLocalStorage.push(Id);
-            localStorage.setItem("productBasket",JSON.stringify(saveProductInLocalStorage));
-        }else{
-            saveProductInLocalStorage=[];
-            saveProductInLocalStorage.push(Id);
-            localStorage.setItem("productBasket",JSON.stringify(saveProductInLocalStorage));
-        }
-    
+document.querySelector(".addProductProduct").forEach( productBasket =>{
+    productBasket.addEventListener("click",function(){
+        addProductBasket(this.dataset.id);
     })
-}
-console.log(saveProductInLocalStorage);
+});  
