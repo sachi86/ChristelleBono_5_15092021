@@ -242,15 +242,16 @@ h3 {
     margin-top: 40px;
     padding: 20px;
 }
-thead,tbody,tfoot {
-    margin: 10px;
+
+th {
+    background-color: #F2E8F1;
 }
 
-th, td {  
-    text-align: center;
-    padding: 10px;
+td,th {
+    border: 2px solid #d39660c9;
     border-radius: 20px;
-    border: solid 2px #d39660c7;   
+    text-align: center;
+    padding: 20px;
 }
 .photoBasket{
     width: 100px;
@@ -268,6 +269,10 @@ th, td {
 .tableFoot {
     text-align: center;
     font-weight: bolder;
+}
+
+.totalPrice {
+    background-color: #ecd6ea;
 }
 
 .fa-calculator {

@@ -31,6 +31,7 @@ function getViewProductBasket(){
         fetch(api + key).then(response => response.json())
         .then(dataProductBasket =>{
             let productBasket = new Product(dataProductBasket);
+            let totalBasket =0;
             document.querySelector("#basket").innerHTML += `<tr>
                                                                 <td class="photoBasket"><img src="${productBasket.imageUrl}" alt="photo du produit" class="photoProductBasket"</td>
                                                                 <td>${productBasket.name}</td>
@@ -38,6 +39,9 @@ function getViewProductBasket(){
                                                                 <td>1</td>
                                                                 <td>${productBasket.getConvertedPrice()}</td>
                                                             </tr>`
+        totalBasket += productBasket.getConvertedPrice();
+        console.log(totalBasket);
+        document.querySelector(".totalPrice").innerHTML += `${totalBasket}`
         })
     }
 };
@@ -51,8 +55,7 @@ function wieuProductBasket(){
         document.querySelector("#basket").innerHTML += `<p>Votre panier est vide! Et si vous alliez voir nos produits ? Nos oursons n'attandent plus que vous !</p>`
     }
 }
-
-const reducer = (accumulator,currentValue) => accumulator + currentValue;
+//Affichage du prix total du panier
 //fonction executé apres que la page soit chargée
 window.addEventListener("load", function() { //attente de la fin de chargement de la page pour appeler les fonctions
 wieuProductBasket();
