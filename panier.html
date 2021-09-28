@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/3ac55bcfa1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orinoco - Les Oursons</title>
+    <title>Orinoco - Le panier</title>
 </head>
 <body>
     <header>
@@ -38,7 +38,7 @@
         </section>  
         <section class="basket_board">
             <h2>On vérifie nos achats...</h2>
-            <table id="basket">
+            <table>
                 <thead>
                     <tr>
                         <th>Photo</th>
@@ -48,19 +48,11 @@
                         <th>prix</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>{}</td>
-                        <td>{}</td>
-                        <td>{}</td>
-                        <td>{}</td>
-                        <td>{}</td>
-                    </tr>
-                </tbody>
+                <tbody id="basket"></tbody>
                 <tfoot>
                     <tr>
                         <td colspan="4" class="tableFoot"><i class="fas fa-calculator"></i>Total</td>
-                        <td>{value}</td>
+                        <td></td>
                     </tr>
                 </tfoot>
             </table>
@@ -117,5 +109,6 @@
         </div>
     </footer>
 </body>
-<script src="./js/panier.js"></script>
+<script src="./js/classProduits.js"></script>
+    <script src="./js/panier.js"></script>
 </html>

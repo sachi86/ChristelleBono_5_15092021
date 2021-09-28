@@ -242,11 +242,27 @@ h3 {
     margin-top: 40px;
     padding: 20px;
 }
+thead,tbody,tfoot {
+    margin: 10px;
+}
 
-th, td {
-    border: solid 2px #d39660c7;
-    border-radius: 20px;
+th, td {  
+    text-align: center;
     padding: 10px;
+    border-radius: 20px;
+    border: solid 2px #d39660c7;   
+}
+.photoBasket{
+    width: 100px;
+    height: 80px;
+    padding: 0;
+    display: flex;
+}
+.photoProductBasket {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 17px;
 }
 
 .tableFoot {
