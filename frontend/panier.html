@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Sedgwick+Ave&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3ac55bcfa1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orinoco - Le panier</title>
+    <script src="/frontend/js/classProduit.js"></script>
+    <script src="/frontend/js/panier.js"></script>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="logo_Orinoco.png" alt="Logo de la boutique Orinoco"></a>
+            <a href="index.html"><img src="images/logo_Orinoco.png" alt="Logo de la boutique Orinoco"></a>
         </div>
         <nav class="navigation">
             <ul>
@@ -23,7 +25,7 @@
                     <a href="index.html" class="navigation_list">Nos produits</a>
                 </li>
                 <li><a href="panier.html" class="navigation_list">
-                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        <i class="fa fa-shopping-basket" aria-hidden="true"><span id="quantityBasket"></span></i>
                         <span>Panier</span>
                     </a>
                 </li>
@@ -56,10 +58,11 @@
                     </tr>
                 </tfoot>
             </table>
+            <button type="button" class="btn btnClear">Vider le panier</button>
         </section>
         <section class="basket_form">
             <h2>On remplis le formulaire pour la livraison...</h2>
-            <form method="POST" action="confirmation.html" class="formDelivery">
+            <form action="confirmation.html" class="formDelivery">
                 <div class="formComposants">
                     <label for="firstName" class="formLabel">Prénom</label>
                     <input type="text" class="formInput" id="firstName" placeholder="Jean" required>
@@ -74,7 +77,7 @@
                 </div>
                 <div class="formComposants">
                     <label for="address" class="formLabel">Adresse postale</label>
-                    <input type="text" class="formInput" id="address" placeholder="20 rue Les Oursons d'Orinoco" required>
+                    <input type="text" class="formInput" id="address" placeholder="20 rue Les Oursons d'Orinoco"required >
                 </div>
                 <div class="formComposants">
                     <label for="city" class="formLabel">Ville</label>
@@ -86,7 +89,7 @@
                 </div>
                 <div class="buttonBasket">
                     <h2>Et pour finir on passe la commande</h2>
-                    <button type="submit" class="btnBasket">Passer commande</button>
+                    <button type="submit" class="btn btnBasket">Passer commande</button>
                 </div>
             </form>
         </section>
@@ -108,7 +111,6 @@
             </ul>
         </div>
     </footer>
+    <script src="/frontend/js/form.js"></script>
 </body>
-<script src="./js/classProduits.js"></script>
-    <script src="./js/panier.js"></script>
 </html>

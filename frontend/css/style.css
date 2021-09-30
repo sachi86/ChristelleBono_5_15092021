@@ -35,6 +35,22 @@ input, select {
     font-size: 1.5rem;
     font-family: 'Neucha', cursive, sans-serif;
 }
+
+.btn {
+    margin:20px;
+    padding:10px 20px;
+    border: 2px solid #d39660c7;
+    border-radius: 20px;
+    background-color: #F2E8F1;
+    font-size: 1.5rem;
+    font-family: 'Neucha', cursive, sans-serif;
+}
+
+.btn:hover, .btn:active {
+    background-color: #ecd6ea;
+    box-shadow: 5px 5px 30px #8B6DEE;
+    border: 2px solid #ecd6ea;
+}
 /*********************HEADER**************************/
 header {
     display: flex;
@@ -69,7 +85,7 @@ ul {
 
 .quantityBasket {
     color:white;
-    display: none;
+    display: flex;
     font-size: 1.5rem;
     background-color: #ecd6ea;
     padding:5px;
@@ -130,7 +146,7 @@ main {
     justify-content: center;
 }
 .banner {
-    background-image: url(images/teddy_5.jpg);
+    background-image: url(/backend/images/teddy_5.jpg);
 	width: 100%;
 	height: 250px;
 	background-size: cover;
@@ -247,12 +263,14 @@ th {
     background-color: #F2E8F1;
 }
 
-td,th {
+th,td {
+    border-collapse: collapse;
     border: 2px solid #d39660c9;
     border-radius: 20px;
-    text-align: center;
     padding: 20px;
+    text-align: center;
 }
+
 .photoBasket{
     width: 100px;
     height: 80px;
@@ -262,8 +280,8 @@ td,th {
 .photoProductBasket {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 17px;
+    object-fit: cover;
 }
 
 .tableFoot {
@@ -307,7 +325,9 @@ td,th {
     outline: none;
     border: solid 2px #ecd6ea;
     box-shadow: 2px 2px 6px #8B6DEE;
+    background-color: #F2E8F1;
 }
+
 .buttonBasket {
     display: flex;
     flex-direction: column;
@@ -315,21 +335,6 @@ td,th {
     align-items: center;
 }
 
-.btnBasket {
-    margin:20px;
-    padding:10px 20px;
-    border: 1px solid #d39660c7;
-    border-radius: 20px;
-    background-color: #F2E8F1;
-    font-size: 1.5rem;
-    font-family: 'Neucha', cursive, sans-serif;
-}
-
-.btnBasket:hover, .btnBasket:active {
-    background-color: #ecd6ea;
-    box-shadow: 5px 5px 30px #8B6DEE;
-    border: 1px solid #ecd6ea;
-}
 /*****************Page Produit*******************/
 .bannerProduct {
 	width: 100%;
@@ -419,23 +424,9 @@ span {
     border: 1px solid #ecd6ea;
 }
 
-#btnProduct {
-    padding:10px 20px;
-    border: 1px solid #d39660c7;
-    border-radius: 20px;
-    background-color: #F2E8F1;
-    font-size: 1.5rem;
-    font-family: 'Neucha', cursive, sans-serif; 
-}
-
-#btnProduct:hover, #btnProduct:active {
-    background-color: #ecd6ea;
-    box-shadow: 5px 5px 30px #8B6DEE;
-    border: 1px solid #ecd6ea;
-}
 /**********Page Confirmation*************/
 .bannerConfirm {
-    background-image: url(images/teddy_5.jpg);
+    background-image: url(/backend/images/teddy_5.jpg);
 	width: 100%;
 	height: 150px;
 	background-size: cover;
@@ -451,3 +442,4 @@ span {
     justify-content: center;
     align-items: center;
 }
+

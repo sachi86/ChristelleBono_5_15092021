@@ -1,4 +1,4 @@
-//Récupération de l'url de l'api
+
 const api = "http://localhost:3000/api/teddies";
 
 //Récupération de la liste des produits

@@ -9,6 +9,7 @@ console.log(urlSearchParams);
 const Id = urlSearchParams.get("id");
 console.log(Id);
 
+
 //affichage du produit qui à été selectionné par l'id avec la méthode fetch
 fetch(`http://localhost:3000/api/teddies/${Id}`)
     .then(response => response.json())
@@ -31,7 +32,7 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
                                                                             </form>
                                                                             <p class="descriptionId">Description du produit :<br/> ${product.description}</p>
                                                                             <p class="priceId">Prix : ${product.getConvertedPrice()}</p>
-                                                                            <button type="submit" id="btnProduct" data-id="${product._id}">Ajouter au panier</button>
+                                                                            <button type="submit" class="btn" id="btnProduct" data-id="${product._id}">Ajouter au panier</button>
                                                                         </div>
                                                                 </article>`;
         const btnProduct = document.querySelector("#btnProduct");

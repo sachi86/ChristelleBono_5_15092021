@@ -8,6 +8,7 @@ function addProductBasket(productId){
 //Récupérer les produits pour le panier
 function getProductBasket(){
     let listProductBasket = localStorage.getItem("ProductBasket");
+    console.log(listProductBasket);
     if (listProductBasket == null){
         return [];
     }else{
@@ -21,17 +22,19 @@ function saveProductBasket(listProductBasket){
 }
 
 // Constante pour l'affichage et la récupération des produit dans le local storage
-const productStorageBasket = getProductBasket();
+var productStorageBasket = getProductBasket();
+console.log(productStorageBasket);
 const api = "http://localhost:3000/api/teddies/";
 
 //Récupération des produit dans le local storage pour l'affichage du panier
 function getViewProductBasket(){
+    let totalBasket = 0;
     for(let key of productStorageBasket){
         console.log(key);
         fetch(api + key).then(response => response.json())
         .then(dataProductBasket =>{
             let productBasket = new Product(dataProductBasket);
-            let totalBasket =0;
+            
             document.querySelector("#basket").innerHTML += `<tr>
                                                                 <td class="photoBasket"><img src="${productBasket.imageUrl}" alt="photo du produit" class="photoProductBasket"</td>
                                                                 <td>${productBasket.name}</td>
@@ -39,12 +42,17 @@ function getViewProductBasket(){
                                                                 <td>1</td>
                                                                 <td>${productBasket.getConvertedPrice()}</td>
                                                             </tr>`
-        totalBasket += productBasket.getConvertedPrice();
+        totalBasket += productBasket.price;
         console.log(totalBasket);
-        document.querySelector(".totalPrice").innerHTML += `${totalBasket}`
-        })
-    }
-};
+        document.querySelector(".totalPrice").innerHTML = `${convertDisplayPrice(totalBasket)}`;
+        });
+    }  
+}
+
+function convertDisplayPrice(oldPrice){ // convertion de l'affichage du prix
+    let price = oldPrice /100;
+    return Intl.NumberFormat('fr-FR', {style: 'currency', currency: 'EUR'}).format(price);
+}
 
 //Affichage du panier
 function wieuProductBasket(){
@@ -55,7 +63,7 @@ function wieuProductBasket(){
         document.querySelector("#basket").innerHTML += `<p>Votre panier est vide! Et si vous alliez voir nos produits ? Nos oursons n'attandent plus que vous !</p>`
     }
 }
-//Affichage du prix total du panier
+
 //fonction executé apres que la page soit chargée
 window.addEventListener("load", function() { //attente de la fin de chargement de la page pour appeler les fonctions
 wieuProductBasket();
