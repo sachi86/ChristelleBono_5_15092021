@@ -442,4 +442,13 @@ span {
     justify-content: center;
     align-items: center;
 }
+/**********Page confirmation************/
+#IdOrder, #PriceOrder {
+    padding:10px;
+    border: 2px solid #d39660c7;
+    border-radius: 20px;
+}
 
+.confirmation{
+    margin: 30px;
+}

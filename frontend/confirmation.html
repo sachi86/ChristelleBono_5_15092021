@@ -15,7 +15,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="logo_Orinoco.png" alt="Logo de la boutique Orinoco"></a>
+            <a href="index.html"><img src="/frontend/images/logo_Orinoco.png" alt="Logo de la boutique Orinoco"></a>
         </div>
         <nav class="navigation">
             <ul>
@@ -36,8 +36,7 @@
         </section>
         <section class="ResumeCommande">
             <h2>Merci pour votre commande!</h2>
-            <p>Votre commande n°</p>
-            <div class="Resume"></div>
+            <p class="confirmation">Confirmation de votre commande n° <span id="IdOrder"> </span> d'un montant de : <span id="PriceOrder"></span></p>
             <p>A bientôt, sur notre site!</p>
         </section>
     </main>
@@ -58,5 +57,7 @@
             </ul>
         </div>
     </footer>
+    <script src="/frontend/js/confirmation.js"></script>
+    <script src="/frontend/js/panier.js"></script>
 </body>
 </html>
