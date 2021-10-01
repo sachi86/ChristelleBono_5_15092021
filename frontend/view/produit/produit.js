@@ -9,9 +9,10 @@ console.log(urlSearchParams);
 const Id = urlSearchParams.get("id");
 console.log(Id);
 
-
+loadConfig().then(data => {
+    config = data;
 //affichage du produit qui à été selectionné par l'id avec la méthode fetch
-fetch(`http://localhost:3000/api/teddies/${Id}`)
+fetch(config.host + `${Id}`)
     .then(response => response.json())
     .then(dataProduct => {
         let product = new Product(dataProduct); 
@@ -42,5 +43,7 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
         });
     })
     .catch(function(err) {
-            alert("Désolé nous n'avons pas pu afficher le petit ourson Orinoco que vous voulez-voir! Si vous rencontrez un problème contactez nous! Erreur : " +err); 
+        addDivError();
+        return err;
+});
 });

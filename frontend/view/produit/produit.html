@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="/frontend/images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com"  crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Sedgwick+Ave&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/3ac55bcfa1.js"  crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3ac55bcfa1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/frontend/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/frontend/js/config.js"></script>
+    <script src="/frontend/js/utils.js"></script>
+    <script src="/frontend/js/classProduit.js"></script>
+    <script src="/frontend/js/localStorage.js"></script>
+    <script src="/frontend/view/produit/produit.js"></script>
     <title>Orinoco - Les Oursons</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="/frontend/images/logo_Orinoco.png" alt="Logo de la boutique Orinoco"></a>
+            <a href="/frontend/view/index/index.html"><img src="/frontend/images/logo_Orinoco.png" alt="Logo de la boutique Orinoco"></a>
         </div>
         <nav class="navigation">
             <ul>
                 <li>
-                    <a href="index.html" class="navigation_list">Nos produits</a>
+                    <a href="/frontend/view/index/index.html" class="navigation_list">Nos produits</a>
                 </li>
-                <li><a href="panier.html" class="navigation_list">
+                <li><a href="/frontend/view/panier/panier.html" class="navigation_list">
                         <i class="fa fa-shopping-basket" aria-hidden="true"><span id="quantityBasket"></span></i>
                         <span>Panier</span>
                     </a>
@@ -31,21 +36,19 @@
         </nav>
     </header>
     <main>
-        <section class="bannerConfirm">
-            <h1 class="title">Confirmation de commande</h1>
+        <section class="bannerProduct">
+            <h1>Que pensez vous de ce petit ourson ?</h1>
         </section>
-        <section class="ResumeCommande">
-            <h2>Merci pour votre commande!</h2>
-            <p class="confirmation">Confirmation de votre commande n° <span id="IdOrder"> </span> d'un montant de : <span id="PriceOrder"></span></p>
-            <p>A bientôt, sur notre site!</p>
+        <section class="productSection">  
+            <h2 class="titleProduct">N'est il pas mignon?</h2>  
         </section>
     </main>
     <footer>
         <div class="social_network">
-            <h3>Suivez-nous</h3>
-            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook social_icon" aria-hidden="true"></i></a>
-            <a href="https://twitter.com/home?lang=fr" target="_blank"><i class="fa fa-twitter social_icon" aria-hidden="true"></i></a>
-            <a href="https://www.instagram.com/?hl=fr" target="_blank"><i class="fa fa-instagram social_icon" aria-hidden="true"></i></a>
+            <h3>Suivez nous</h3>
+            <a href="https://www.facebook.com/"><i class="fa fa-facebook social_icon" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/home?lang=fr"><i class="fa fa-twitter social_icon" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/?hl=fr"><i class="fa fa-instagram social_icon" aria-hidden="true"></i></a>
         </div>
         <div class="services">
             <h3>Aides et engagements</h3>
@@ -57,7 +60,6 @@
             </ul>
         </div>
     </footer>
-    <script src="/frontend/js/confirmation.js"></script>
-    <script src="/frontend/js/panier.js"></script>
+
 </body>
 </html>

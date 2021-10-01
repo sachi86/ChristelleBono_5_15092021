@@ -1,11 +1,6 @@
-//Variables des différents regex pour validation input
-var regexText =  new RegExp(/^[\w\s'\-àáâãäæçèéêëìíîïñòóôõöùúûüýÿœÀÁÂÃÄÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÜŒ]+$/g); // RegExp(/^[\w\s-']+$/g)  àáâãäæçèéêëìíîïñòóôõöùúûüýÿœÀÁÂÃÄÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÜŒ
-var regexOnlyText = new RegExp(/^[a-zA-Z\s'\-àáâãäæçèéêëìíîïñòóôõöùúûüýÿœÀÁÂÃÄÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÜŒ]+$/g);
-var regexEmail = new RegExp(/^[\w\-\.]+@[a-zA-Z0-9\-]+\.[a-zA-Z]{2,6}$/g); // /^.+@.+\..+$/g
-var regexZip = new RegExp(/^\d{5}$/g);
 
 //Variable objet contact pour l'envoi formulaire
-var contact = {
+let contact = {
     firstName: null,
     lastName: null,
     address: null,
@@ -26,7 +21,8 @@ const idZip = "zip";
 function ValidInputForm(idInput, regex){ 
     let input = document.getElementById(idInput);
     let valueInput = input.value;
-    
+    let valid = true;
+    valid &= input.reportValidity();
     if(valueInput.match(regex)){
         input.style.background = "#d2e9d8";
         input.style.border = "#d2e9d8";
@@ -37,14 +33,16 @@ function ValidInputForm(idInput, regex){
     else{
         input.style.background = "#f5cfd3";
         input.style.border = "#f5cfd3";
-        input.style.boxShadow = "5px 5px 10px #f5cfd3"  
+        input.style.boxShadow = "5px 5px 10px #f5cfd3" 
         return false;
     }
 }
 
 //Fonction d'envoi du formulaire
 function sendForm(){ 
-    fetch(api + "/order", {
+    loadConfig().then(data => {
+        config = data;
+    fetch(config.host + "/order", {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -63,12 +61,14 @@ function sendForm(){
         document.querySelector(".formDelivery").submit(); //Soumet le formulaire
     })
     .catch(function(err) {
-        alert("Désolé nous n'avons pas pu envoyer la confirmation de commande! Si vous rencontrez un problème contactez nous! Erreur : " +err);
+        addDivError();
+        return err;
     });
+});
 }
 
 // Fonction d'écoute des évènements (input) sur le formulaire
-function listenerForm() 
+function listenerContact() 
 {   
     document.getElementById(idFirstname).addEventListener("blur", ()=>{
         ValidInputForm(idFirstname, regexOnlyText); //Appel de la fonction de vérification de l'input
@@ -102,4 +102,4 @@ function listenerForm()
     });    
 }
 
-listenerForm();
+listenerContact();

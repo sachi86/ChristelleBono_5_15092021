@@ -9,7 +9,7 @@ window.addEventListener("load", function() {
             console.log(totalBasket);
         }
         document.querySelector("#IdOrder").innerHTML += `${orderBasketId}`;
-        document.querySelector("#PriceOrder").innerHTML += `${convertDisplayPrice(totalBasket)}`;
+        document.querySelector("#PriceOrder").innerHTML += `${getConvertedPrice(totalBasket)}`;
         localStorage.clear();
         products = [];
     });
