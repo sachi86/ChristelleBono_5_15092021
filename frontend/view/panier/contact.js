@@ -21,6 +21,7 @@ const idZip = "zip";
 function ValidInputForm(idInput, regex){ 
     let input = document.getElementById(idInput);
     let valueInput = input.value;
+    removeErrorInput();
     if(valueInput.match(regex)){
         input.style.background = "#d2e9d8";
         input.style.border = "#d2e9d8";

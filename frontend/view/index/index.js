@@ -22,6 +22,7 @@ fetch(config.host).then(data => data.json()) //Data recovery in json format
         }        
     })
     .catch(function(err) {
-    document.querySelector(".listProduct").innerHTML += `<p>Désolé nous n'avons pas pu afficher nos petits ourson Orinoco! Si vous rencontrez un problème contactez nous!` + err + `</p>`;
+        addDivError();
+        return err;
     });
 });

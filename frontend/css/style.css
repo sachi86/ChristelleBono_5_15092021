@@ -337,11 +337,16 @@ th,td {
 
 .errorInput {
     display: flex;
+    align-items: center;
     background-color: #f5cfd3;
     color:#6e000b;
     border-radius: 20px;
     margin-top:10px;
-    padding: 20px;
+    padding: 20px 40px;
+}
+
+.errorInput span {
+    margin-right:10px;
 }
 
 .buttonBasket {

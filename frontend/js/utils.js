@@ -29,3 +29,10 @@ function errorMessageInput(){
                                                         <p>Ce champs est vide ou inccorrect</p>`;
 
 }
+
+//function to remove div errorInput
+function removeErrorInput(){
+    if(document.querySelector(".formComposants").lastElementChild.className == "errorInput"){
+        document.querySelector(".formComposants").removeChild(".errorInput")
+    }
+}
