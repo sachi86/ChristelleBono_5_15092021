@@ -1,8 +1,8 @@
-//Récupération de l'api dans le fichier config.json
+//Recovering the API in the config file
 loadConfig().then(data => {
     config = data;
-//Récupération de la liste des produits
-fetch(config.host).then(data => data.json()) //Récupération des données en format json
+//Retrieving the list of products
+fetch(config.host).then(data => data.json()) //Data recovery in json format
     .then(jsonListProduct => {
         for( let jsonProduct of jsonListProduct){
             let product = new Product(jsonProduct);

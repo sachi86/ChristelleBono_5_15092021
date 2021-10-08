@@ -1,11 +1,11 @@
-// Fonction pour ajouter au panier
+// Function to add to cart
 function addProductBasket(productId){
     let listProductBasket = getProductBasket();
     listProductBasket.push(productId);
     saveProductBasket(listProductBasket);
 }
 
-//Récupérer les produits pour le panier
+//Retrieve the products for the basket
 function getProductBasket(){
     let listProductBasket = localStorage.getItem("ProductBasket");
     console.log(listProductBasket);
@@ -16,7 +16,7 @@ function getProductBasket(){
     }
 }
 
-//Sauvegarder les produits pour le panier
+// Save the products for the basket
 function saveProductBasket(listProductBasket){
     localStorage.setItem("ProductBasket", JSON.stringify(listProductBasket));
 }

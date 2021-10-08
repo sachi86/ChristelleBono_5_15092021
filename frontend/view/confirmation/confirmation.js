@@ -1,3 +1,4 @@
+//listen to the page after loading
 window.addEventListener("load", function() { 
         let orderBasket = JSON.parse(localStorage.order);
         let orderBasketId = orderBasket.orderId;

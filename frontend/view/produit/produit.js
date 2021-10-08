@@ -1,8 +1,8 @@
-//Récupération de la chaîne de requête dans l'URL
+//Retrieving the query string from the URL
 const queryStringUrlId = window.location.search;
 console.log(queryStringUrlId);
 
-//Extraire l'id de l'URL
+//Extract id from url
 const urlSearchParams = new URLSearchParams(queryStringUrlId);
 console.log(urlSearchParams);
 
@@ -11,7 +11,7 @@ console.log(Id);
 
 loadConfig().then(data => {
     config = data;
-//affichage du produit qui à été selectionné par l'id avec la méthode fetch
+//display of the product which has been selected by the id with the fetch method
 fetch(config.host + `${Id}`)
     .then(response => response.json())
     .then(dataProduct => {

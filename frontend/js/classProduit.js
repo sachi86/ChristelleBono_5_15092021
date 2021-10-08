@@ -1,4 +1,4 @@
-//Création d'une classe pour mes objects produit
+//Creation of a class for my product objects
 class Product{
     constructor(jsonProduct){
         jsonProduct && Object.assign(this, jsonProduct);

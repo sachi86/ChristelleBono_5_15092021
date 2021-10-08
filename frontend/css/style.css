@@ -335,6 +335,15 @@ th,td {
     background-color: #F2E8F1;
 }
 
+.errorInput {
+    display: flex;
+    background-color: #f5cfd3;
+    color:#6e000b;
+    border-radius: 20px;
+    margin-top:10px;
+    padding: 20px;
+}
+
 .buttonBasket {
     display: flex;
     flex-direction: column;
@@ -431,7 +440,7 @@ span {
     border: 1px solid #ecd6ea;
 }
 
-/**********Page Confirmation*************/
+/**********Confirmation's page*************/
 .bannerConfirm {
     background-image: url(/backend/images/teddy_5.jpg);
 	width: 100%;

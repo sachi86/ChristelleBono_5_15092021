@@ -1,8 +1,8 @@
-// Constante pour l'affichage et la récupération des produit dans le local storage
+// variable for displaying and retrieving products in local storage
 let productStorageBasket = getProductBasket();
 console.log(productStorageBasket);
 
-//Récupération des produit dans le local storage pour l'affichage du panier
+//Retrieving the products from the local storage for the display of the basket
 function getDisplayProductBasket(){
     let totalBasket = 0;
     for(let key of productStorageBasket){
@@ -28,7 +28,7 @@ function getDisplayProductBasket(){
     }  
 }
 
-//Affichage du panier
+//Shopping cart display
 function displayProductBasket(){
     console.log(productStorageBasket);
     if(productStorageBasket.length > 0){
@@ -40,7 +40,7 @@ function displayProductBasket(){
     }
 }
 
-//Fonction executé apres que la page soit chargée
-window.addEventListener("load", function() { //attente de la fin de chargement de la page pour appeler les fonctions
+//Function executed after the page is loaded
+window.addEventListener("load", function() { 
 displayProductBasket();
 });

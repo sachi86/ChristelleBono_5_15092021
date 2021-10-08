@@ -1,5 +1,5 @@
 
-//Variable objet contact pour l'envoi formulaire
+//Variable's object of contact
 let contact = {
     firstName: null,
     lastName: null,
@@ -9,7 +9,7 @@ let contact = {
     zip: null
 }
 
-//Variables pour simplifié la manupulation des ids input
+//Variables for use easy id's input
 const idFirstname = "firstName";
 const idLastname = "lastName";
 const idEmail = "email";
@@ -17,12 +17,10 @@ const idAddress = "address";
 const idCity = "city";
 const idZip = "zip";
 
-//Fonction de vérification de la valididé des input
+//Input validation check function
 function ValidInputForm(idInput, regex){ 
     let input = document.getElementById(idInput);
     let valueInput = input.value;
-    let valid = true;
-    valid &= input.reportValidity();
     if(valueInput.match(regex)){
         input.style.background = "#d2e9d8";
         input.style.border = "#d2e9d8";
@@ -34,11 +32,12 @@ function ValidInputForm(idInput, regex){
         input.style.background = "#f5cfd3";
         input.style.border = "#f5cfd3";
         input.style.boxShadow = "5px 5px 10px #f5cfd3" 
+        errorMessageInput();
         return false;
     }
 }
 
-//Fonction d'envoi du formulaire
+//Form sending function
 function sendForm(){ 
     loadConfig().then(data => {
         config = data;
@@ -57,8 +56,8 @@ function sendForm(){
     })
     .then(function(ServerValue){
         let validOrderBasket = JSON.stringify(ServerValue);
-        localStorage.setItem("order", validOrderBasket); //Stocke la réponse du serveur dans le localstorage
-        document.querySelector(".formDelivery").submit(); //Soumet le formulaire
+        localStorage.setItem("order", validOrderBasket); //Store the response from the server in the localstorage
+        document.querySelector(".formDelivery").submit(); //Submit the form
     })
     .catch(function(err) {
         addDivError();
@@ -67,7 +66,7 @@ function sendForm(){
 });
 }
 
-// Fonction d'écoute des évènements (input) sur le formulaire
+// Listening function for events (input) on the form
 function listenerContact() 
 {   
     document.getElementById(idFirstname).addEventListener("blur", ()=>{
@@ -90,14 +89,14 @@ function listenerContact()
     });
     
     document.querySelector(".formDelivery").addEventListener("click", (evenement)=> {
-        evenement.preventDefault(); // Annule le comportement par défaut du bouton formulaire
+        evenement.preventDefault(); // Cancels the default behavior of the form button
         if(ValidInputForm(idFirstname, regexOnlyText) &&
         ValidInputForm(idLastname, regexOnlyText) &&
         ValidInputForm(idEmail, regexEmail) &&
         ValidInputForm(idAddress, regexText) &&
         ValidInputForm(idCity, regexOnlyText) &&
         ValidInputForm(idZip, regexZip)){ 
-            sendForm(); //Appel de la fonction d'envoie
+            sendForm(); //Calling the send function
         }
     });    
 }
