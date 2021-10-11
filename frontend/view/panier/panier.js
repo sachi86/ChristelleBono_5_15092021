@@ -1,6 +1,3 @@
-// variable for displaying and retrieving products in local storage
-let productStorageBasket = getProductBasket();
-console.log(productStorageBasket);
 
 //Retrieving the products from the local storage for the display of the basket
 function getDisplayProductBasket(){
@@ -14,7 +11,7 @@ function getDisplayProductBasket(){
             let productBasket = new Product(dataProductBasket);
             
             document.querySelector("#basket").innerHTML += `<tr>
-                                                                <td class="photoBasket"><img src="${productBasket.imageUrl}" alt="photo du produit" class="photoProductBasket"</td>
+                                                                <td scope="row" class="photoBasket"><img src="${productBasket.imageUrl}" alt="photo du produit" class="photoProductBasket"</td>
                                                                 <td>${productBasket.name}</td>
                                                                 <td>${productBasket._id}</td>
                                                                 <td>1</td>
@@ -23,6 +20,8 @@ function getDisplayProductBasket(){
         totalBasket += productBasket.price;
         console.log(totalBasket);
         document.querySelector(".totalPrice").innerHTML = `${getConvertedPrice(totalBasket)}`;
+        document.querySelector(".totalQuantity").innerHTML = `${ProductLength()}`;
+        basketProductCount();
         });
     });
     }  
@@ -35,8 +34,9 @@ function displayProductBasket(){
         getDisplayProductBasket();
     }else{
         document.querySelector(".emptyBasket").innerHTML += `<p>Votre panier est vide! Et si vous alliez voir nos produits ? Nos oursons n'attandent plus que vous !</p>`
-        document.querySelector("#basket_board").style.display = none;
-
+        document.querySelector(".emptyBasket").style.background = "#ecd6ea";
+        document.querySelector("#basket_board").style.display = "none";
+        document.querySelector(".basket_form").style.display = "none";
     }
 }
 

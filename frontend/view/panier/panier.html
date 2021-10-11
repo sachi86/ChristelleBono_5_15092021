@@ -52,18 +52,19 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Photo</th>
-                        <th>Nom du produit</th>
-                        <th>Référence</th>
-                        <th>Quantité</th>
-                        <th>prix</th>
+                        <th scope="col" class="culumnPhoto">Photo</th>
+                        <th scope="col">Nom du produit</th>
+                        <th scope="col">Référence</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">prix</th>
                     </tr>
                 </thead>
                 <tbody id="basket"></tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4" class="tableFoot"><i class="fas fa-calculator"></i>Total</td>
-                        <td class="totalPrice"></td>
+                        <td colspan="3" class="tableFoot"><i class="fas fa-calculator"></i>Total</td>
+                        <td colspan="1" class="totalQuantity"></td>
+                        <td colspan="1" class="totalPrice"></td>
                     </tr>
                 </tfoot>
             </table>

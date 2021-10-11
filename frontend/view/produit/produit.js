@@ -36,6 +36,7 @@ fetch(config.host + `${Id}`)
                                                                             <button type="submit" class="btn" id="btnProduct" data-id="${product._id}">Ajouter au panier</button>
                                                                         </div>
                                                                 </article>`;
+        basketProductCount();
         const btnProduct = document.querySelector("#btnProduct");
         btnProduct.addEventListener("click", function(event){
             event.preventDefault();

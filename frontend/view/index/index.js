@@ -26,3 +26,5 @@ fetch(config.host).then(data => data.json()) //Data recovery in json format
         return err;
     });
 });
+
+basketProductCount();
