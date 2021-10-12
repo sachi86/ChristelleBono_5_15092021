@@ -40,7 +40,17 @@ function displayProductBasket(){
     }
 }
 
+//Function to clear basket
+function clearBasket(){
+    let btnClearBasket = querySelector(".btnBasketClear");
+    btnClearBasket.addEventListener("click", function(){
+        localStorage.clear();
+        document.location.reload();
+    })
+}
+
 //Function executed after the page is loaded
 window.addEventListener("load", function() { 
 displayProductBasket();
+clearBasket();
 });

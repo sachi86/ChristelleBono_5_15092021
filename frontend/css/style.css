@@ -86,6 +86,9 @@ ul {
     list-style: none;
 }
 .navigation_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding:35px;
     color:black;
 }
@@ -97,10 +100,20 @@ ul {
 #quantityBasket {
     color:white;
     display: flex;
-    font-size: 1.5rem;
-    background-color: #ecd6ea;
-    padding:5px;
+    margin-top:-40px;
+    margin-right: -20px;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 1.4rem;
+    background-color: #8B6DEE;
     border-radius: 50px;
+}
+
+.iconBasket {
+    margin-right: 20px;
+    margin-bottom: 5px;
 }
 /**************FOOTER********************/
 footer {

@@ -20,10 +20,10 @@ function addDivError(){
 }
 
 //function to create a div for the form display error message
-function errorMessageInput(){
+function errorMessageInput(idParent){
     let divErrorInput = document.createElement("div");
     divErrorInput.className = "errorInput";
-    let divComposantsInput = document.querySelector(".formComposants");
+    let divComposantsInput = document.getElementById(idParent);
     divComposantsInput.appendChild(divErrorInput);
     document.querySelector(".errorInput").innerHTML += `<span>&#10060;</span>
                                                         <p>Ce champs est vide ou inccorrect</p>`;
@@ -31,8 +31,8 @@ function errorMessageInput(){
 }
 
 //function to remove div errorInput
-function removeErrorInput(){
-    if(document.querySelector(".formComposants").lastElementChild.className == "errorInput"){
-        document.querySelector(".formComposants").removeChild(".errorInput")
+function removeErrorInput(idParent){
+    if(document.getElementById(idParent).lastElementChild.className == "errorInput"){
+        document.getElementById(idParent).removeChild(".errorInput");
     }
 }

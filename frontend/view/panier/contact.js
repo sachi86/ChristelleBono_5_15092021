@@ -21,7 +21,7 @@ const idZip = "zip";
 function ValidInputForm(idInput, regex){ 
     let input = document.getElementById(idInput);
     let valueInput = input.value;
-    removeErrorInput();
+    removeErrorInput(idInput);
     if(valueInput.match(regex)){
         input.style.background = "#d2e9d8";
         input.style.border = "#d2e9d8";
@@ -33,7 +33,7 @@ function ValidInputForm(idInput, regex){
         input.style.background = "#f5cfd3";
         input.style.border = "#f5cfd3";
         input.style.boxShadow = "5px 5px 10px #f5cfd3" 
-        errorMessageInput();
+        errorMessageInput(idInput);
         return false;
     }
 }
