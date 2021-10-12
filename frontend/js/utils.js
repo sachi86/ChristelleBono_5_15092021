@@ -14,25 +14,9 @@ function getConvertedPrice(oldPrice){
 function addDivError(){
     let divError = document.createElement('div');
     divError.className = "errorMessage";
-    document.querySelector(".errorMessage").innerHTML `<span style='font-size:100px;'>&#10071;
+    document.querySelector(".errorMessage").innerHTML += `<span style='font-size:100px;'>&#10071;
                                                         </span><p>Nous n'avons pas pu afficher les éléments de cette page, si le problème persite, veuillez nous contactez.</p>
                                                         <span style='font-size:100px;'>&#10071;</span>`
 }
 
-//function to create a div for the form display error message
-function errorMessageInput(idParent){
-    let divErrorInput = document.createElement("div");
-    divErrorInput.className = "errorInput";
-    let divComposantsInput = document.getElementById(idParent);
-    divComposantsInput.appendChild(divErrorInput);
-    document.querySelector(".errorInput").innerHTML += `<span>&#10060;</span>
-                                                        <p>Ce champs est vide ou inccorrect</p>`;
 
-}
-
-//function to remove div errorInput
-function removeErrorInput(idParent){
-    if(document.getElementById(idParent).lastElementChild.className == "errorInput"){
-        document.getElementById(idParent).removeChild(".errorInput");
-    }
-}

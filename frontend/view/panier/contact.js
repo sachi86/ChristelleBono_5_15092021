@@ -17,11 +17,17 @@ const idAddress = "address";
 const idCity = "city";
 const idZip = "zip";
 
+//funtion to Error Message Input
+function errorMessageInput(idParent){
+    let divErrorChild = document.querySelector(".errorInput");
+    let divError = document.getElementById(idParent).appendChild(divErrorChild);
+    divError.style.display = "flex";
+}
+
 //Input validation check function
 function ValidInputForm(idInput, regex){ 
     let input = document.getElementById(idInput);
     let valueInput = input.value;
-    removeErrorInput(idInput);
     if(valueInput.match(regex)){
         input.style.background = "#d2e9d8";
         input.style.border = "#d2e9d8";
@@ -33,9 +39,9 @@ function ValidInputForm(idInput, regex){
         input.style.background = "#f5cfd3";
         input.style.border = "#f5cfd3";
         input.style.boxShadow = "5px 5px 10px #f5cfd3" 
-        errorMessageInput(idInput);
         return false;
     }
+    
 }
 
 //Form sending function
@@ -71,7 +77,7 @@ function sendForm(){
 function listenerContact() 
 {   
     document.getElementById(idFirstname).addEventListener("blur", ()=>{
-        ValidInputForm(idFirstname, regexOnlyText); //Appel de la fonction de vérification de l'input
+        ValidInputForm(idFirstname, regexOnlyText);
     })
     document.getElementById(idLastname).addEventListener("blur", ()=>{
         ValidInputForm(idLastname, regexOnlyText);

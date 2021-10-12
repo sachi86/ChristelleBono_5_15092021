@@ -4,7 +4,6 @@ function addProductBasket(productId){
     let listProductBasket = getProductBasket();
     listProductBasket.push(productId);
     saveProductBasket(listProductBasket);
-    basketProductCount();
 }
 
 
@@ -38,5 +37,6 @@ function basketProductCount(){
     }
     else{
         displayCount.innerHTML = `${quantity}`;
+        displayCount.style.display = "flex";
     }
 }

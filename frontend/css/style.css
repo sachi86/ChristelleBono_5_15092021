@@ -74,7 +74,7 @@ header {
 }
 
 .logo {
-    padding: 2px 20px 1px 20px;
+    padding: 5px 20px 1px 20px;
 }
 
 .logo:hover {
@@ -99,7 +99,7 @@ ul {
 
 #quantityBasket {
     color:white;
-    display: flex;
+    display: none;
     margin-top:-40px;
     margin-right: -20px;
     justify-content: center;
@@ -362,17 +362,15 @@ th,td {
 }
 
 .errorInput {
-    display: flex;
+    display: none;
+    justify-content: center;
+    align-items: center;
     align-items: center;
     background-color: #f5cfd3;
     color:#6e000b;
     border-radius: 20px;
     margin-top:10px;
     padding: 20px 40px;
-}
-
-.errorInput span {
-    margin-right:10px;
 }
 
 .buttonBasket {

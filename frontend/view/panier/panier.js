@@ -16,7 +16,8 @@ function getDisplayProductBasket(){
                                                                 <td>${productBasket._id}</td>
                                                                 <td>1</td>
                                                                 <td>${productBasket.getConvertedPrice()}</td>
-                                                            </tr>`
+                                                            </tr>
+                                                            <button type="submit" id="btnRowClear" data-id="${productBasket._id}">Supprimer</button>`
         totalBasket += productBasket.price;
         console.log(totalBasket);
         document.querySelector(".totalPrice").innerHTML = `${getConvertedPrice(totalBasket)}`;
@@ -40,17 +41,25 @@ function displayProductBasket(){
     }
 }
 
-//Function to clear basket
+//function to clear basket
 function clearBasket(){
-    let btnClearBasket = querySelector(".btnBasketClear");
-    btnClearBasket.addEventListener("click", function(){
-        localStorage.clear();
-        document.location.reload();
+    localStorage.clear();
+    basketProductCount();
+    document.location.reload();
+}
+
+//function clear to row
+function RowProductClear(key){
+    let btnRowClear = document.getElementById("btnRowClear");
+    console.log(btnRowClear);
+    btnRowClear.addEventListener("click",function(RowClearEvent){
+        RowClearEvent.preventDefault();
+        productStorageBasket.splice(key,1); 
     })
 }
 
-//Function executed after the page is loaded
+//function executed after the page is loaded
 window.addEventListener("load", function() { 
 displayProductBasket();
-clearBasket();
+RowProductClear();
 });

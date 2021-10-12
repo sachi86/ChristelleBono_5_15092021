@@ -41,6 +41,8 @@ fetch(config.host + `${Id}`)
         btnProduct.addEventListener("click", function(event){
             event.preventDefault();
             addProductBasket(this.dataset.id);
+            document.location.reload();
+            basketProductCount();
         });
     })
     .catch(function(err) {
