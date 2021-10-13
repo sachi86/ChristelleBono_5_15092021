@@ -10,7 +10,6 @@ function addProductBasket(productId){
 //Retrieve the products for the basket
 function getProductBasket(){
     let listProductBasket = localStorage.getItem("ProductBasket");
-    console.log(listProductBasket);
     if (listProductBasket == null){
         return [];
     }else{

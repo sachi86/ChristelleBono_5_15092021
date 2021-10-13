@@ -1,13 +1,13 @@
 //Retrieving the query string from the URL
 const queryStringUrlId = window.location.search;
-console.log(queryStringUrlId);
+
 
 //Extract id from url
 const urlSearchParams = new URLSearchParams(queryStringUrlId);
-console.log(urlSearchParams);
 
+//Extract just id from url
 const Id = urlSearchParams.get("id");
-console.log(Id);
+
 
 loadConfig().then(data => {
     config = data;
