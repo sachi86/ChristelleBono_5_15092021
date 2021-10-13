@@ -361,17 +361,25 @@ th,td {
     background-color: #F2E8F1;
 }
 
-.errorInput {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
+.error {
+    width : 100%;
+    padding: 0;
+    margin-top : 10px;
+    
+    font-size: 80%;
+    color: #58060f;
     background-color: #f5cfd3;
-    color:#6e000b;
+    
     border-radius: 20px;
-    margin-top:10px;
-    padding: 20px 40px;
+    
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
+    
+.error.active {
+    padding: 0.5em;
+}
+    
 
 .buttonBasket {
     display: flex;

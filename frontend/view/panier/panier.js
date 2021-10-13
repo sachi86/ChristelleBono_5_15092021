@@ -16,8 +16,7 @@ function getDisplayProductBasket(){
                                                                 <td>${productBasket._id}</td>
                                                                 <td>1</td>
                                                                 <td>${productBasket.getConvertedPrice()}</td>
-                                                            </tr>
-                                                            <button type="submit" id="btnRowClear" data-id="${productBasket._id}">Supprimer</button>`
+                                                            </tr>`
         totalBasket += productBasket.price;
         console.log(totalBasket);
         document.querySelector(".totalPrice").innerHTML = `${getConvertedPrice(totalBasket)}`;
@@ -48,18 +47,7 @@ function clearBasket(){
     document.location.reload();
 }
 
-//function clear to row
-function RowProductClear(key){
-    let btnRowClear = document.getElementById("btnRowClear");
-    console.log(btnRowClear);
-    btnRowClear.addEventListener("click",function(RowClearEvent){
-        RowClearEvent.preventDefault();
-        productStorageBasket.splice(key,1); 
-    })
-}
-
 //function executed after the page is loaded
 window.addEventListener("load", function() { 
 displayProductBasket();
-RowProductClear();
 });

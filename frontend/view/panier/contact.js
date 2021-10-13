@@ -17,12 +17,6 @@ const idAddress = "address";
 const idCity = "city";
 const idZip = "zip";
 
-//funtion to Error Message Input
-function errorMessageInput(idParent){
-    let divErrorChild = document.querySelector(".errorInput");
-    let divError = document.getElementById(idParent).appendChild(divErrorChild);
-    divError.style.display = "flex";
-}
 
 //Input validation check function
 function ValidInputForm(idInput, regex){ 
@@ -33,12 +27,14 @@ function ValidInputForm(idInput, regex){
         input.style.border = "#d2e9d8";
         input.style.boxShadow = "5px 5px 10px #d2e9d8"  
         contact[idInput] = valueInput;
+        removeMessage(input);
         return true;      
     }
     else{
         input.style.background = "#f5cfd3";
         input.style.border = "#f5cfd3";
         input.style.boxShadow = "5px 5px 10px #f5cfd3" 
+        displayMessage(input, "Ce champ est vide ou incorrect");
         return false;
     }
     

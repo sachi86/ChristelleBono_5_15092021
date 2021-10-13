@@ -19,4 +19,15 @@ function addDivError(){
                                                         <span style='font-size:100px;'>&#10071;</span>`
 }
 
-
+function displayMessage(inputElement, message) {
+    let errorElement = inputElement.nextElementSibling;
+    errorElement.classList.add('active');
+    errorElement.textContent = message;
+}
+    
+function removeMessage(inputElement) {
+    let errorElement = inputElement.nextElementSibling;
+    errorElement.classList.remove('active');
+    errorElement.textContent = '';
+}
+    
